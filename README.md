@@ -1,2 +1,2 @@
-# AbstractModel
-How to create a dynamic model, using OOP abstraction to your advantage.
+# AbstractRepository
+How to create a dynamic Repository, using OOP abstraction to your advantage.
