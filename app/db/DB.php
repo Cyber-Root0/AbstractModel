@@ -10,14 +10,9 @@ class DB implements MysqlConnection{
         "double" => \PDO::PARAM_STR,
         "float" => \PDO::PARAM_STR
     ];
-    protected $connection;
-    public function __construct(){
-        try{
-             $this->connection = new \PDO("mysql:host=".DB_IP.";dbname=".DB_NAME, DB_USERNAME, DB_PASSWORD);
-        }catch(\PDOException $e){
-            echo $e->getMessage();
-        }
-
+    public function __construct(
+        protected \PDO $connection 
+    ){
     }
 
     public function prepare(string $abstractSql, array $values = []) : \PDOStatement | false{
