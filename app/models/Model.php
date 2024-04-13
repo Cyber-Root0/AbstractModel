@@ -6,12 +6,11 @@ use BrunoAlves\abstractmodel\db\DB;
 use BrunoAlves\abstractmodel\Entity\Entity;
 abstract class Model implements ModelInterface{
 
-    protected DB $DB;
     protected string $table = "";
 
-    public function __construct(){
-
-        $this->DB = new DB();
+    public function __construct(
+        protected DB $DB
+    ){
     }
     public function get(int $id) : \InvalidArgumentException | array | bool{
         
